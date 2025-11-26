@@ -33,64 +33,6 @@ const handleMouseLeave = function(e) {
     }
 };
 
-const handlePurchaseFormSubmit = function(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Disable button and show loading
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Processing...';
-    
-    // Initialize Paystack
-    const handler = PaystackPop.setup({
-        key: 'pk_test_xxxxxxxxxxxxx', // Replace with your actual Paystack public key
-        email: formData.get('email'),
-        amount: 2700, // 27 GHS in pesewas
-        currency: 'GHS',
-        channels: formData.get('payment_method') === 'momo' 
-            ? ['mobile_money'] 
-            : ['card'],
-        metadata: {
-            custom_fields: [
-                {
-                    display_name: "Customer Name",
-                    variable_name: "customer_name",
-                    value: formData.get('name')
-                },
-                {
-                    display_name: "Phone Number",
-                    variable_name: "phone_number",
-                    value: formData.get('phone') || 'N/A'
-                },
-                {
-                    display_name: "Product",
-                    variable_name: "product",
-                    value: "The Ghanaian Goddess Code"
-                }
-            ]
-        },
-        callback: function(response) {
-            // Payment successful
-            console.log('Payment successful!', response.reference);
-            // Close modal
-            const purchaseModal = document.getElementById('purchase-modal');
-            purchaseModal.classList.remove('flex');
-            purchaseModal.classList.add('hidden');
-            // Redirect to thank you page (you'll need to create this)
-            window.location.href = '/thank-you.html';
-        },
-        onClose: function() {
-            // User closed payment popup
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Complete Purchase - 27 GHS <i class="fas fa-lock ml-2"></i>';
-        }
-    });
-    
-    handler.openIframe();
-};
 
 const handleContactFormSubmit = function(e) {
     e.preventDefault();
@@ -393,9 +335,8 @@ export function init() {
         purchaseModal.classList.add('flex');
     });
 
-    // Add payment form listener
-    const paymentForm = document.getElementById('payment-form');
-    paymentForm.addEventListener('submit', handlePurchaseFormSubmit);
+    // Note: Payment form is no longer used since we're using Selar's iframe
+    // The payment form listener has been removed
 
     // Add contact form listener
     const contactForm = document.querySelector('.contact-form');
@@ -482,10 +423,7 @@ export function teardown() {
     window.removeEventListener('scroll', handleScroll);
     document.removeEventListener('mouseleave', handleMouseLeave);
     
-    const paymentForm = document.getElementById('payment-form');
-    if (paymentForm) {
-        paymentForm.removeEventListener('submit', handlePurchaseFormSubmit);
-    }
+    // Payment form listener has been removed as we're using Selar's iframe instead
     
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {

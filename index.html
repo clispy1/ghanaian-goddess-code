@@ -1621,7 +1621,7 @@
     
     <!-- PURCHASE MODAL -->
     <div id="purchase-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-3xl w-full">
             <div class="sticky top-0 bg-white border-b p-6 flex justify-between items-center">
                 <div>
                     <span class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold">
@@ -1632,16 +1632,16 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
-            <div class="p-6">
-                <h2 class="text-3xl font-bold mb-2" style="color: #830b48;">Get The Ghanaian Goddess Code</h2>
+
+            <div class="p-6 text-center">
+                <h2 class="text-3xl font-bold mb-4" style="color: #830b48;">Get The Ghanaian Goddess Code</h2>
                 <p class="text-gray-600 mb-6">Join 500+ women who transformed their dating lives</p>
-                
+
                 <!-- Product Summary -->
                 <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-6 mb-6">
                     <div class="flex items-start space-x-4">
                         <i class="fas fa-book text-4xl" style="color: #830b48;"></i>
-                        <div class="flex-1">
+                        <div class="flex-1 text-left">
                             <h3 class="font-bold text-xl mb-3">What You're Getting:</h3>
                             <ul class="space-y-2 text-sm text-gray-700">
                                 <li class="flex items-center space-x-2">
@@ -1650,11 +1650,11 @@
                                 </li>
                                 <li class="flex items-center space-x-2">
                                     <i class="fas fa-check text-green-500"></i>
-                                    <span>Quick Start Cheat Sheet (50 GHS Value)</span>
+                                    <span>Quick Start Cheat Sheet</span>
                                 </li>
                                 <li class="flex items-center space-x-2">
                                     <i class="fas fa-check text-green-500"></i>
-                                    <span>Implementation Tools (30 GHS Value)</span>
+                                    <span>Implementation Tools</span>
                                 </li>
                                 <li class="flex items-center space-x-2">
                                     <i class="fas fa-check text-green-500"></i>
@@ -1669,62 +1669,18 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Payment Form -->
-                <form id="payment-form" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Full Name *</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Email Address *</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none">
-                        <p class="text-xs text-gray-500 mt-1">Your download link will be sent here</p>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Phone Number (Optional)</label>
-                        <input type="tel" name="phone" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none" placeholder="e.g., 0244123456">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Payment Method *</label>
-                        <div class="space-y-2">
-                            <label class="flex items-center space-x-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-pink-500 transition">
-                                <input type="radio" name="payment_method" value="momo" required class="w-5 h-5" style="accent-color: #830b48;">
-                                <span class="flex-1 font-semibold">Mobile Money (MTN, Vodafone, AirtelTigo)</span>
-                                <i class="fas fa-mobile-alt text-2xl" style="color: #830b48;"></i>
-                            </label>
-                            <label class="flex items-center space-x-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-pink-500 transition">
-                                <input type="radio" name="payment_method" value="card" class="w-5 h-5" style="accent-color: #830b48;">
-                                <span class="flex-1 font-semibold">Debit/Credit Card</span>
-                                <i class="fas fa-credit-card text-2xl" style="color: #830b48;"></i>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-2">
-                        <input type="checkbox" name="terms" required class="mt-1" style="accent-color: #830b48;">
-                        <label class="text-sm text-gray-600">
-                            I agree to the <a href="#" class="underline font-semibold" style="color: #830b48;">Terms & Conditions</a> and understand this is a digital product with instant access
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="w-full py-4 text-white font-bold rounded-lg gradient-pink hover:opacity-90 transition text-lg flex items-center justify-center">
-                        Complete Purchase - 27 GHS
-                        <i class="fas fa-lock ml-2"></i>
-                    </button>
-                </form>
-                
+
+                <p class="text-lg mb-4">Click the button below to complete your purchase securely on Selar:</p>
+
+                <a href="https://selar.com/buy-ghanaian-goddess-code" target="_blank" id="buy-now-button" class="w-full py-4 text-white font-bold rounded-lg gradient-pink hover:opacity-90 transition text-lg block">
+                    Proceed to Secure Checkout - 27 GHS
+                    <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+
                 <!-- Trust Badges -->
                 <div class="flex flex-wrap justify-center gap-4 mt-6 pt-6 border-t">
                     <div class="flex items-center space-x-2 text-sm text-gray-600">
                         <i class="fas fa-shield-alt text-green-500"></i>
-                        <span>7-Day Guarantee</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm text-gray-600">
-                        <i class="fas fa-lock text-blue-500"></i>
                         <span>Secure Payment</span>
                     </div>
                     <div class="flex items-center space-x-2 text-sm text-gray-600">
@@ -1732,9 +1688,9 @@
                         <span>Instant Access</span>
                     </div>
                 </div>
-                
+
                 <p class="text-center text-xs text-gray-500 mt-4">
-                    🔒 Your payment information is secured with 256-bit SSL encryption
+                    You will be redirected to Selar's secure checkout page in a new tab
                 </p>
             </div>
         </div>
