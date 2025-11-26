@@ -113,29 +113,30 @@ function startCountdown() {
     const updateTimer = () => {
         const now = new Date();
         const midnight = new Date();
-        midnight.setHours(24, 0, 0, 0);
-        
+        midnight.setDate(midnight.getDate() + 1); // Set to tomorrow
+        midnight.setHours(24, 0, 0, 0); // Set to midnight of tomorrow
+
         const diff = midnight - now;
-        
+
         if (diff <= 0) {
-            // Reset to next midnight
+            // If somehow we're past midnight, set to next day
             midnight.setDate(midnight.getDate() + 1);
         }
-        
+
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
+
         // Update all countdown displays
         const hoursElements = document.querySelectorAll('#hours, #hours2');
         const minutesElements = document.querySelectorAll('#minutes, #minutes2');
         const secondsElements = document.querySelectorAll('#seconds, #seconds2');
-        
+
         hoursElements.forEach(el => el.textContent = String(hours).padStart(2, '0'));
         minutesElements.forEach(el => el.textContent = String(minutes).padStart(2, '0'));
         secondsElements.forEach(el => el.textContent = String(seconds).padStart(2, '0'));
     };
-    
+
     updateTimer();
     countdownInterval = setInterval(updateTimer, 1000);
 }
@@ -143,16 +144,28 @@ function startCountdown() {
 // Social proof notifications
 function startSocialProofNotifications() {
     const names = [
-        'Ama K.', 'Akosua M.', 'Abena T.', 'Afia S.', 'Adwoa P.', 
+        // English names (70%)
+        'Sarah J.', 'Emmanuella W.', 'Olivia M.', 'Sophia L.', 'Gifty T.',
+        'Isabella C.', 'Emerald K.', 'Charlotte R.', 'Amelia S.', 'Sandra P.',
+        'Evelyn B.', 'Abigail G.', 'Emily D.', 'Ella H.', 'Madison F.',
+        'Luna A.', 'Grace I.', 'Chloe N.', 'Camila V.', 'Aurora O.',
+        'Eleanor Q.', 'Jane U.', 'Hannah X.', 'Layla Y.', 'Obaya Z.',
+        'Gabriella J.', 'Riley K.', 'Zoey L.', 'Nora M.', 'Lily W.',
+        'Aria C.', 'Aaliyah S.', 'Eliana R.', 'Quinn T.', 'Gabriella P.',
+        'Bennett F.', 'James S.', 'Oliver T.', 'Elijah M.', 'Christabel K.',
+        'Doreen P.', 'Henry V.', 'Theodora B.', 'Edina D.', 'Queen H.',
+        'Sebastian L.', 'Samuel R.', 'Nana Ekua A.', 'Joseph O.', 'Wyatt Q.',
+
+        // Ghanaian names (30%)
+        'Ama K.', 'Akosua M.', 'Abena T.', 'Afia S.', 'Adwoa P.',
         'Esi D.', 'Efua A.', 'Yaa B.', 'Akua J.', 'Adjoa L.',
         'Ama A.', 'Akosua B.', 'Abena C.', 'Afia D.', 'Adwoa E.',
-        'Esi F.', 'Efua G.', 'Yaa H.', 'Akua I.', 'Adjoa J.',
-        'Ama L.', 'Akosua N.', 'Abena O.', 'Afia P.', 'Adwoa Q.'
+        'Esi F.', 'Efua G.', 'Yaa H.', 'Akua I.', 'Adjoa J.'
     ];
     
     const cities = [
-        'Accra', 'Kumasi', 'Tema', 'Takoradi', 'Tamale',
-        'Cape Coast', 'Koforidua', 'Sunyani', 'Ho', 'Obuasi'
+        'Accra', 'Kumasi', 'Tema', 'Takoradi', 'Kasoa',
+        'Cape Coast', 'Koforidua', 'Sunyani', 'Legon', 'KNUST'
     ];
     
     const times = ['just now', '2 minutes ago', '5 minutes ago', '8 minutes ago'];
