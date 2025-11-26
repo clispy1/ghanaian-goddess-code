@@ -5,6 +5,10 @@ let viewerCountInterval = null;
 let viewerCountTimeout = null;
 let exitIntentShown = false;
 
+// Configuration variables
+let copiesLeft = 43; // Number of copies left at promotional price
+let totalCopies = 50; // Total number of copies at promotional price
+
 // Named event handlers for proper cleanup
 const handleScroll = function() {
     const floatingButton = document.getElementById('floating-buy-button');
@@ -353,31 +357,34 @@ export function init() {
     if (sessionStorage.getItem('exitIntentShown')) {
         exitIntentShown = true;
     }
-    
+
     // Start countdown timer
     startCountdown();
-    
+
     // Start social proof notifications
     startSocialProofNotifications();
-    
+
     // Start viewer count
     startViewerCount();
-    
+
+    // Update copies left display
+    updateCopiesLeftDisplay();
+
     // Initialize FAQ accordion
     initializeFAQ();
-    
+
     // Initialize modals
     initializeModals();
-    
+
     // Initialize scroll buttons
     initializeScrollButtons();
-    
+
     // Add scroll listener for floating button
     window.addEventListener('scroll', handleScroll);
-    
+
     // Add exit-intent listener
     document.addEventListener('mouseleave', handleMouseLeave);
-    
+
     // Add floating buy button listener
     const floatingButton = document.getElementById('floating-buy-button');
     floatingButton.addEventListener('click', () => {
@@ -385,21 +392,48 @@ export function init() {
         purchaseModal.classList.remove('hidden');
         purchaseModal.classList.add('flex');
     });
-    
+
     // Add payment form listener
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', handlePurchaseFormSubmit);
-    
+
     // Add contact form listener
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactFormSubmit);
     }
-    
+
     // Add newsletter form listener
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', handleNewsletterFormSubmit);
+    }
+}
+
+// Update the display of copies left
+function updateCopiesLeftDisplay() {
+    const copiesLeftElements = document.querySelectorAll('#copies-left, #copies-left-2, #copies-left-3, #copies-left-4');
+    copiesLeftElements.forEach(element => {
+        element.textContent = copiesLeft;
+    });
+
+    // Update the copies remaining display
+    const copiesRemainingElement = document.getElementById('copies-remaining');
+    if (copiesRemainingElement) {
+        copiesRemainingElement.textContent = copiesLeft;
+    }
+
+    // Update the total copies display
+    const totalCopiesElement = document.getElementById('total-copies');
+    if (totalCopiesElement) {
+        totalCopiesElement.textContent = totalCopies;
+    }
+
+    // Update the progress bar
+    const progressBar = document.getElementById('copies-progress-bar');
+    if (progressBar) {
+        const percentage = (copiesLeft / totalCopies) * 100;
+        progressBar.style.width = percentage + '%';
     }
 }
 

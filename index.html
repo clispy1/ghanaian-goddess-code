@@ -384,7 +384,7 @@
                 </div>
                 
                 <div class="text-xl font-semibold">
-                    Only <span class="text-2xl font-bold">47 copies</span> left at this price!
+                    Only <span class="text-2xl font-bold"><span id="copies-left">0</span> copies</span> left at this price!
                 </div>
             </div>
         </div>
@@ -496,12 +496,12 @@
                     <h3 class="text-3xl font-bold text-gray-900">LIMITED COPIES AT THIS PRICE</h3>
                     <div class="max-w-md mx-auto">
                         <div class="bg-gray-200 rounded-full h-6 overflow-hidden">
-                            <div class="bg-gradient-to-r from-orange-500 to-red-600 h-full rounded-full" style="width: 23.5%"></div>
+                            <div id="copies-progress-bar" class="bg-gradient-to-r from-orange-500 to-red-600 h-full rounded-full" style="width: 23.5%"></div>
                         </div>
-                        <p class="text-sm text-gray-600 mt-2">Only <strong>47 out of 200</strong> copies remaining at 27 GHS</p>
+                        <p class="text-sm text-gray-600 mt-2">Only <strong><span id="copies-remaining">0</span> out of <span id="total-copies">200</span></strong> copies remaining at 27 GHS</p>
                     </div>
                     <p class="text-lg text-gray-700">
-                        Once these 47 copies are gone, the price goes back to <span class="font-bold" style="color: #830b48;">270 GHS</span>
+                        Once these <span id="copies-left-2">0</span> copies are gone, the price goes back to <span class="font-bold" style="color: #830b48;">270 GHS</span>
                     </p>
                 </div>
             </div>
@@ -878,7 +878,7 @@
                 <button class="cta-button px-10 py-5 text-white font-bold rounded-lg gradient-coral hover:opacity-90 transition text-xl">
                     Stop Losing. Start Winning. - 27 GHS
                 </button>
-                <p class="mt-4 text-gray-300">47 copies left at this price</p>
+                <p class="mt-4 text-gray-300"><span id="copies-left-3">0</span> copies left at this price</p>
             </div>
         </div>
     </section>
@@ -948,12 +948,12 @@
             <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                 <!-- Left: Image -->
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop" alt="Confident Ghanaian woman" class="rounded-2xl shadow-2xl w-full">
+                    <img src="./goddess-girl.png" alt="Confident Ghanaian woman" class="rounded-2xl shadow-2xl w-full">
                     
                     <!-- Floating Stats Badge -->
                     <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-2xl p-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold gradient-pink bg-clip-text text-transparent">500+</div>
+                            <div class="text-4xl font-bold gradient-pink bg-clip-text text-white">125+</div>
                             <div class="text-sm text-gray-600 font-semibold">Women Transformed</div>
                         </div>
                     </div>
@@ -1263,7 +1263,7 @@
                             <p class="text-5xl font-bold mb-2">27 GHS</p>
                             <p class="text-2xl">(90% OFF)</p>
                             <div class="mt-4 bg-white/20 rounded-lg py-2 px-4 inline-block">
-                                <p class="text-sm">⚠️ Only 47 copies left at this price</p>
+                                <p class="text-sm">⚠️ Only <span id="copies-left-4">0</span> copies left at this price</p>
                             </div>
                         </div>
                     </div>
