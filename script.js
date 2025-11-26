@@ -408,6 +408,9 @@ export function init() {
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', handleNewsletterFormSubmit);
     }
+
+    // Hide preloader after initialization
+    hidePreloader();
 }
 
 // Update the display of copies left
@@ -434,6 +437,21 @@ function updateCopiesLeftDisplay() {
     if (progressBar) {
         const percentage = (copiesLeft / totalCopies) * 100;
         progressBar.style.width = percentage + '%';
+    }
+}
+
+// Hide preloader when page is loaded
+function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Add fade-out effect before hiding
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease-out';
+
+        // Wait for the fade-out transition to complete, then remove the preloader
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
     }
 }
 

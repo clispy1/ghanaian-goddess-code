@@ -141,44 +141,41 @@
     </style>
 </head>
 <body class="bg-white text-gray-800">
-
-       <!-- PRELOADER -->
+    <!-- PRELOADER -->
     <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-white z-[9999] flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
             <div class="w-16 h-16 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mb-4"></div>
             <p class="text-xl font-bold" style="color: #830b48;">Loading...</p>
         </div>
     </div>
-    
-    <!-- STICKY HEADER -->
-    <header class="fixed top-0 left-0 right-0 bg-white border-t border-red-600 shadow-md z-40">
-        
-            <!-- COUNTDOWN BANNER -->
-            <div class="bg-red-600 text-white py-2 z-50 animate-pulse">
-                <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center space-x-4">
-                    <div class="flex items-center">
-                        <span class="text-sm md:text-lg font-bold bg-yellow-400 text-red-700 px-3 py-1 rounded-full animate-bounce">⏰ HURRY! OFFER ENDS SOON!</span>
+
+    <!-- COUNTDOWN BANNER -->
+    <div class="bg-red-600 text-white py-2 z-50 animate-pulse">
+        <div class="container mx-auto px-4 flex items-center justify-center space-x-4">
+            <div class="flex items-center">
+                <span class="text-sm md:text-lg font-bold bg-yellow-400 text-red-700 px-3 py-1 rounded-full animate-bounce">⏰ HURRY! OFFER ENDS SOON!</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <span class="font-semibold text-sm md:text-base">⏰ Time left:</span>
+                <div class="flex space-x-1">
+                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
+                        <div id="hours" class="text-sm md:text-lg">00</div>
                     </div>
-                    <div class="flex items-center space-x-1">
-                        <span class="font-semibold text-sm md:text-base">⏰ Time left:</span>
-                        <div class="flex space-x-1 items-center">
-                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
-                                <div id="hours" class="text-sm md:text-lg">00</div>
-                            </div>
-                            <span class="text-sm md:text-lg">:</span>
-                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
-                                <div id="minutes" class="text-sm md:text-lg">00</div>
-                            </div>
-                            <span class="text-sm md:text-lg">:</span>
-                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
-                                <div id="seconds" class="text-sm md:text-lg">00</div>
-                            </div>
-                        </div>
+                    <span class="text-sm md:text-lg">:</span>
+                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
+                        <div id="minutes" class="text-sm md:text-lg">00</div>
+                    </div>
+                    <span class="text-sm md:text-lg">:</span>
+                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
+                        <div id="seconds" class="text-sm md:text-lg">00</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-
+    <!-- STICKY HEADER -->
+    <header class="fixed top-[3.75rem] left-0 right-0 bg-white border-t border-red-600 shadow-md z-40">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <div class="text-xl sm:text-2xl font-bold" style="color: #830b48; height: 56px; display: flex; align-items: center;">
