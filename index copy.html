@@ -141,41 +141,44 @@
     </style>
 </head>
 <body class="bg-white text-gray-800">
-    <!-- PRELOADER -->
+
+       <!-- PRELOADER -->
     <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-white z-[9999] flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
             <div class="w-16 h-16 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mb-4"></div>
             <p class="text-xl font-bold" style="color: #830b48;">Loading...</p>
         </div>
     </div>
-
-    <!-- COUNTDOWN BANNER -->
-    <div class="bg-red-600 text-white py-2 z-50 animate-pulse">
-        <div class="container mx-auto px-4 flex items-center justify-center space-x-4">
-            <div class="flex items-center">
-                <span class="text-sm md:text-lg font-bold bg-yellow-400 text-red-700 px-3 py-1 rounded-full animate-bounce">⏰ HURRY! OFFER ENDS SOON!</span>
-            </div>
-            <div class="flex items-center space-x-1">
-                <span class="font-semibold text-sm md:text-base">⏰ Time left:</span>
-                <div class="flex space-x-1">
-                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
-                        <div id="hours" class="text-sm md:text-lg">00</div>
+    
+    <!-- STICKY HEADER -->
+    <header class="fixed top-0 left-0 right-0 bg-white border-t border-red-600 shadow-md z-40">
+        
+            <!-- COUNTDOWN BANNER -->
+            <div class="bg-red-600 text-white py-2 z-50 animate-pulse">
+                <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center space-x-4">
+                    <div class="flex items-center">
+                        <span class="text-sm md:text-lg font-bold bg-yellow-400 text-red-700 px-3 py-1 rounded-full animate-bounce">⏰ HURRY! OFFER ENDS SOON!</span>
                     </div>
-                    <span class="text-sm md:text-lg">:</span>
-                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
-                        <div id="minutes" class="text-sm md:text-lg">00</div>
-                    </div>
-                    <span class="text-sm md:text-lg">:</span>
-                    <div class="countdown-box bg-white text-red-700 rounded px-2 py-1 font-bold">
-                        <div id="seconds" class="text-sm md:text-lg">00</div>
+                    <div class="flex items-center space-x-1">
+                        <span class="font-semibold text-sm md:text-base">⏰ Time left:</span>
+                        <div class="flex space-x-1 items-center">
+                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
+                                <div id="hours" class="text-sm md:text-lg">00</div>
+                            </div>
+                            <span class="text-sm md:text-lg">:</span>
+                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
+                                <div id="minutes" class="text-sm md:text-lg">00</div>
+                            </div>
+                            <span class="text-sm md:text-lg">:</span>
+                            <div class="countdown-box bg-white text-red-700 rounded px-1 md:px-2 py-1 font-bold">
+                                <div id="seconds" class="text-sm md:text-lg">00</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- STICKY HEADER -->
-    <header class="fixed top-[3.75rem] left-0 right-0 bg-white border-t border-red-600 shadow-md z-40">
+
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center">
                 <div class="text-xl sm:text-2xl font-bold" style="color: #830b48; height: 56px; display: flex; align-items: center;">
@@ -389,7 +392,7 @@
                 </div>
                 
                 <div class="text-xl font-semibold">
-                    Only <span class="text-2xl font-bold"><span id="copies-left">0</span> copies</span> left at this price!
+                    Only <span class="text-2xl font-bold"><span id="copies-left">10</span> copies</span> left at this price!
                 </div>
             </div>
         </div>
@@ -503,10 +506,10 @@
                         <div class="bg-gray-200 rounded-full h-6 overflow-hidden">
                             <div id="copies-progress-bar" class="bg-gradient-to-r from-orange-500 to-red-600 h-full rounded-full" style="width: 23.5%"></div>
                         </div>
-                        <p class="text-sm text-gray-600 mt-2">Only <strong><span id="copies-remaining">0</span> out of <span id="total-copies">200</span></strong> copies remaining at 27 GHS</p>
+                        <p class="text-sm text-gray-600 mt-2">Only <strong><span id="copies-remaining">10</span> out of <span id="total-copies">20</span></strong> copies remaining at 27 GHS</p>
                     </div>
                     <p class="text-lg text-gray-700">
-                        Once these <span id="copies-left-2">0</span> copies are gone, the price goes back to <span class="font-bold" style="color: #830b48;">270 GHS</span>
+                        Once these <span id="copies-left-2">10</span> copies are gone, the price goes back to <span class="font-bold" style="color: #830b48;">270 GHS</span>
                     </p>
                 </div>
             </div>
@@ -883,7 +886,7 @@
                 <button class="cta-button px-10 py-5 text-white font-bold rounded-lg gradient-coral hover:opacity-90 transition text-xl">
                     Stop Losing. Start Winning. - 27 GHS
                 </button>
-                <p class="mt-4 text-gray-300"><span id="copies-left-3">0</span> copies left at this price</p>
+                <p class="mt-4 text-gray-300"><span id="copies-left-3">10</span> copies left at this price</p>
             </div>
         </div>
     </section>
@@ -1268,7 +1271,7 @@
                             <p class="text-5xl font-bold mb-2">27 GHS</p>
                             <p class="text-2xl">(90% OFF)</p>
                             <div class="mt-4 bg-white/20 rounded-lg py-2 px-4 inline-block">
-                                <p class="text-sm">⚠️ Only <span id="copies-left-4">0</span> copies left at this price</p>
+                                <p class="text-sm">⚠️ Only <span id="copies-left-4">10</span> copies left at this price</p>
                             </div>
                         </div>
                     </div>
