@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghanian-goddess-code.vercel.app/sitemap.xml
